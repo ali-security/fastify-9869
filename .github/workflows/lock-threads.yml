@@ -1,8 +1,6 @@
-name: 'Lock Threads'
+name: Lock Threads
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,7 +11,7 @@ concurrency:
 
 jobs:
   action:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       issues: write
       pull-requests: write
@@ -21,7 +19,7 @@ jobs:
       - uses: jsumners/lock-threads@e460dfeb36e731f3aeb214be6b0c9a9d9a67eda6 # v3.0.0
         with:
           issue-inactive-days: '90'
-          exclude-any-issue-labels: 'discussion,good first issue,help wanted'
+          exclude-any-issue-labels: discussion,good first issue,help wanted
           issue-comment: >
             This issue has been automatically locked since there
             has not been any recent activity after it was closed.

@@ -9,7 +9,7 @@ permissions:
 jobs:
   run:
     if: contains(github.event.pull_request.labels.*.name, 'test-compare')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       pull-requests: write
@@ -18,4 +18,4 @@ jobs:
         uses: nearform-actions/github-action-test-compare@d50bc37a05e736bb40db0eebc8fdad3e33ece136 # v1.0.26
         with:
           label: test-compare
-          testCommand: 'npm run test:ci'
+          testCommand: npm run test:ci

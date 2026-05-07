@@ -3,7 +3,7 @@ name: Internal Links Check
 on:
   pull_request:
     paths:
-      - 'docs/**'
+      - docs/**
       - '*.md'
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   linkChecker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     steps:

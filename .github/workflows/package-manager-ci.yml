@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+      - master
 permissions:
   contents: read
 
@@ -18,7 +19,7 @@ jobs:
       matrix:
         # Maintenance and active LTS
         node-version: [20, 22, 24]
-        os: [ubuntu-latest]
+        os: [ubuntu-24.04]
         pnpm-version: [8]
 
     steps:
@@ -54,7 +55,7 @@ jobs:
       matrix:
         # Maintenance and active LTS
         node-version: [20, 22, 24]
-        os: [ubuntu-latest]
+        os: [ubuntu-24.04]
 
     steps:
       - uses: actions/checkout@v6
